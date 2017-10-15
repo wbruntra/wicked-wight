@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GoT Password Generator</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC|Tinos" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Game of Thrones Passphrase Generator</h1>
+      <div class="row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+          <ul id="passphrases"></ul>
+        </div>
+        <div class="col-xs-2">
+          <button class="btn btn-default btn-group-justified" id="settings-button" type="button" data-toggle="modal" data-target="#options-modal">Settings</button>
+          <button class="btn btn-default btn-group-justified top-buffer" id="refresh-button" data-dismiss="modal">New Phrases</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <p>Increase your password strength using this xkcd-inspired passphrase generator with a <em>Game of Thrones</em> twist.</p>
+          <h3>Why do this?</h3>
+          <p>Whether your go-to is "hodor", "h0dor", or "Hodor123", people tend to follow predictable patterns when tasked with creating a password. On the other hand, most computer-generated passwords look something like this mess: "jB2WvCp0". My short-term memory span for such a password is basically one character, meaning I have to refer back to an 8-character password 8 times in order to type it successfully. Also, typing capital letters on a smartphone screen is really annoying, and punctuation is even worse.</p>
+          <p>So the main purpose here is to create fun passphrases that require an minimum of character manipulation and special symbols, and which you only have refer to once or twice in order to transcribe successfully. They also should be relatively easy to remember, at least compared to a random string of characters.</p>
+          <h3>How does this work?</h3>
+          <p>The site picks at random from a list of the 4,000 most common words in the Game of Thrones series to generate a passphrase. That randomness makes for a pretty secure passphrase. For example, a four-word passphrase generated using this method offers better security than a random 8-character password consisting of letters and digits (there are almost 300 trillion possible four-word passphrases).</p>
+          <p>Longer passphrases, naturally, are more secure. Each word added to the passphrase makes it 4,000 times harder to guess.</p>
+          <h3>Does this website save the passphrases it generates?</h3>
+          <p>Nah, I wouldn't do that. But also, technically this website doesn't generate passphrases, it just sends the wordlist over to your browser and then <em>you</em> generate the passphrases. So not only do I not save your passphrases, I never even knew them in the first place.</p><br><br>
+          <p><a href="https://xkcd.com/936/">Here</a> is the relevant xkcd.</p>
+        </div>
+      </div>
+      <div class="modal fade" id="pw-block" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title">Copy Password</h4>
+            </div>
+            <div class="modal-body col-xs-12">
+              <p>You can edit the text inside the box yourself or automatically <a id="remove-spaces" href="#">remove spaces</a>.</p><br>
+              <div class="input-group col-xs-12">
+                <input class="col-xs-8" id="pw-text" value="long string of words"><span class="input-group-button col-xs-2">
+                  <button class="btn btn-default btn-sm" id="copy-button" type="button" data-toggle="tooltip" data-clipboard-target="#pw-text" title="Copied!"><img src="/img/clippy.svg" style="height:24px;"></button></span>
+              </div>
+              <p>Heedless of my efforts, some sites will not trust your password without a capital letter and a number, so you can click <a id="cap-num" href="#">here</a> to fulfill that requirement in the simplest possible way.</p>
+            </div>
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="options-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title">Options</h4>
+            </div>
+            <div class="modal-body col-xs-12">
+              <div class="input-group col-sm-5"><span class="input-group-addon">Passphrase Length</span>
+                <input class="form-control" id="phrase-length" aria-describedby="sizing-addon2" type="number" value="4"/>
+              </div>
+              <div class="input-group col-sm-5"><span class="input-group-addon">Phrases to Create</span>
+                <input class="form-control" id="phrase-number" aria-describedby="sizing-addon2" type="number" value="4"/>
+              </div>
+              <div class="modal-footer"></div>
+            </div>
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-info btn-lg" id="modal-button" type="button" data-toggle="modal" data-target="#pw-block" style="display: none;">Open Password Copy Modal</button>
+      <footer class="footer">
+        <p class="top-buffer pull-right">Created by William Bruntrager</p>
+      </footer>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
+    <script src="/js/got-long-words.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

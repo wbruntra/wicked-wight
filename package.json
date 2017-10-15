@@ -1,0 +1,27 @@
+{
+  "name": "app-engine-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "stylus source/stylesheets/style.styl -o public/css",
+    "html": "pug -P source/pages/main-2.pug -o templates -w",
+    "css": "stylus -w source/stylesheets/style.styl -o public/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbruntra/python-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wbruntra/python-template/issues"
+  },
+  "homepage": "https://github.com/wbruntra/python-template#readme",
+  "dependencies": {
+    "pug-bootstrap": "git+https://github.com/mike-goodwin/pug-bootstrap.git",
+    "pug-cli": "^1.0.0-alpha6",
+    "stylus": "^0.54.5"
+  }
+}

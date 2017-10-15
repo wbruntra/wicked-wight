@@ -1,0 +1,74 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  background-color: #6495ed;
+  font-family: 'Tinos', serif;
+  margin-bottom: 60px;
+}
+h1 {
+  text-align: center;
+  font-family: 'Playfair Display SC', serif;
+  font-size: 3.4em;
+}
+body p {
+  font-size: 1.4em;
+}
+.modal p {
+  font-size: 1.2em;
+}
+h3 {
+  text-decoration: underline;
+  margin-bottom: 24px;
+}
+.container {
+  margin: 20px auto;
+  padding: 20px 10%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 3px #888;
+}
+.row {
+  margin-top: 20px;
+}
+.settings-box {
+  margin-bottom: 20px;
+}
+#passphrases,
+#pw-text {
+  padding: 10px;
+  background-color: #b9b9b9;
+  font-family: monospace;
+  font-size: 1.4em;
+}
+.input-group {
+  margin-bottom: 18px;
+}
+.input-group input {
+  height: 50px;
+}
+ul#passphrases {
+  list-style-type: none;
+  text-align: center;
+}
+li {
+  margin: 0 10%;
+  margin-top: 8px;
+  cursor: pointer;
+}
+li:hover {
+  background-color: #9bb9b9;
+}
+#pw-text {
+  background-color: #fff;
+  text-align: center;
+}
+.top-buffer {
+  margin-top: 20px;
+}
+.footer {
+/* Set the fixed height of the footer here */
+  border-top: 1px solid #000;
+  height: 40px;
+}
