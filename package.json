@@ -1,11 +1,10 @@
 {
-  "name": "app-engine-template",
+  "name": "wicked-wight",
   "version": "1.0.0",
-  "description": "",
+  "description": "Increase your password strength using this xkcd-inspired passphrase generator with a Game of Thrones twist.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "stylus source/stylesheets/style.styl -o public/css",
+    "build": "webpack",
     "html": "pug -P source/pages/main-2.pug -o templates -w",
     "css": "stylus -w source/stylesheets/style.styl -o public/css"
   },
@@ -20,8 +19,13 @@
   },
   "homepage": "https://github.com/wbruntra/python-template#readme",
   "dependencies": {
+    "jquery": "^3.3.1",
     "pug-bootstrap": "git+https://github.com/mike-goodwin/pug-bootstrap.git",
     "pug-cli": "^1.0.0-alpha6",
     "stylus": "^0.54.5"
+  },
+  "devDependencies": {
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.0.8"
   }
 }

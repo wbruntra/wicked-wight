@@ -1,0 +1,94 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title GoT Password Generator
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+    link(href='https://fonts.googleapis.com/css?family=Playfair+Display+SC|Tinos', rel='stylesheet')
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    .container
+      h1 Game of Thrones Passphrase Generator
+      .row
+        .col-xs-2
+        .col-xs-8
+          ul#passphrases
+        .col-xs-2
+          button#settings-button.btn.btn-default.btn-group-justified(type='button', data-toggle='modal', data-target='#options-modal') Settings
+          button#refresh-button.btn.btn-default.btn-group-justified.top-buffer(data-dismiss='modal') New Phrases
+      .row
+        .col-xs-12
+          p
+            | Increase your password strength using this xkcd-inspired passphrase generator with a 
+            em Game of Thrones
+            |  twist.
+          h3 Why do this?
+          p
+            | Whether your go-to is "hodor", "h0dor", or "Hodor123", people tend to follow predictable patterns when tasked with creating a password. On the other hand, most computer-generated passwords look something like this mess: "jB2WvCp0". My short-term memory span for such a password is basically one character, meaning I have to refer back to an 8-character password 8 times in order to type it successfully. Also, typing capital letters on a smartphone screen is really annoying, and punctuation is even worse.
+          p
+            | So the main purpose here is to create fun passphrases that require an minimum of character manipulation and special symbols, and which you only have refer to once or twice in order to transcribe successfully. They also should be relatively easy to remember, at least compared to a random string of characters.
+          h3 How does this work?
+          p
+            | The site picks at random from a list of the 4,000 most common words in the Game of Thrones series to generate a passphrase. That randomness makes for a pretty secure passphrase. For example, a four-word passphrase generated using this method offers better security than a random 8-character password consisting of letters and digits (there are almost 300 trillion possible four-word passphrases).
+          p
+            | Longer passphrases, naturally, are more secure. Each word added to the passphrase makes it 4,000 times harder to guess.
+          h3 Does this website save the passphrases it generates?
+          p
+            | Nah, I wouldn't do that. But also, technically this website doesn't generate passphrases, it just sends the wordlist over to your browser and then 
+            em you
+            |  generate the passphrases. So not only do I not save your passphrases, I never even knew them in the first place.
+          br
+          br
+          p
+            a(href='https://xkcd.com/936/') Here
+            |  is the relevant xkcd.
+      #pw-block.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal')
+                span(aria-hidden='true') ×
+                span.sr-only Close
+              h4.modal-title Copy Password
+            .modal-body.col-xs-12
+              p
+                | You can edit the text inside the box yourself or automatically 
+                a#remove-spaces(href='#') remove spaces
+                | .
+              br
+              .input-group.col-xs-12
+                input#pw-text.col-xs-8(value='long string of words')
+                span.input-group-button.col-xs-2
+                  button#copy-button.btn.btn-default.btn-sm(type='button', data-toggle='tooltip', data-clipboard-target='#pw-text', title='Copied!')
+                    img(src='/img/clippy.svg', style='height:24px;')
+              p
+                | Heedless of my efforts, some sites will not trust your password without a capital letter and a number, so you can click 
+                a#cap-num(href='#') here
+                |  to fulfill that requirement in the simplest possible way.
+            .modal-footer
+      #options-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal')
+                span(aria-hidden='true') ×
+                span.sr-only Close
+              h4.modal-title Options
+            .modal-body.col-xs-12
+              .input-group.col-sm-5
+                span.input-group-addon Passphrase Length
+                input#phrase-length.form-control(aria-describedby='sizing-addon2', type='number', value='4')
+              .input-group.col-sm-5
+                span.input-group-addon Phrases to Create
+                input#phrase-number.form-control(aria-describedby='sizing-addon2', type='number', value='4')
+              .modal-footer
+            .modal-footer
+      button#modal-button.btn.btn-info.btn-lg(type='button', data-toggle='modal', data-target='#pw-block', style='display: none;') Open Password Copy Modal
+      footer.footer
+        p.top-buffer.pull-right Created by William Bruntrager
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js')
+    script(src='/js/bundle.js')
