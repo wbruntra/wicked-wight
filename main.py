@@ -5,8 +5,6 @@ import os
 import jinja2
 import webapp2
 
-from google.appengine.ext import ndb
-
 import json
 import time
 
@@ -36,14 +34,8 @@ class Handler(webapp2.RequestHandler):
 
 class MainHandler(Handler):
     def get(self):
-        # this is the line you will change
-        self.render('main-2.html')
-
-class GreetingHandler(Handler):
-    def get(self, name):
-        self.write("Hello, %s" % (name))
+        self.render('main.html')
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/greet/(.*)', GreetingHandler)
     ], debug=True)
