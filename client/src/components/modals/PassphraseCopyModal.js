@@ -9,9 +9,9 @@ import {
 } from 'react-bootstrap';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import ClippySVG from './clippy.svg';
-import { upperFirst } from '../utils';
+import { upperFirst } from '../../utils';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import * as actions from '../../actions';
 
 const tooltip = (
   <Tooltip id="tooltip">

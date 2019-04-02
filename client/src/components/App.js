@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { generatePhrases } from '../utils';
 import { Grid, Panel, Row, Col, Button, ListGroup, ListGroupItem } from 'react-bootstrap';
-import PassphraseCopyModal from './PassphraseCopyModal';
+import PassphraseCopyModal from './modals/PassphraseCopyModal';
 import SettingsModal from './modals/SettingsModal';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
@@ -67,16 +67,16 @@ class App extends Component {
           <Col xs={12} smOffset={2} sm={8} >
             <Panel>
               <ListGroup className="passphrases">
-                {phraseList.map((p, i) => {
+                {phraseList.map((phrase, i) => {
                   return (
                     <ListGroupItem
                       className="pw-text"
                       onClick={() => {
-                        this.handleClick(p);
+                        this.handleClick(phrase);
                       }}
                       key={i}
                     >
-                      {p}
+                      {phrase}
                     </ListGroupItem>
                   );
                 })}

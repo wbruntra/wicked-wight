@@ -8,7 +8,7 @@
   "scripts": {    
     "front": "cd client && yarn start",
     "build": "npm run build --prefix client",
-    "deploy": "npm run build && gcloud app deploy",
+    "deploy": "npm run build && gcloud app deploy -v production",
     "start": "node ./bin/www",
     "server": "nodemon ./bin/www",
     "dev": "concurrently \"npm run server\" \"npm run start --prefix client\"",
