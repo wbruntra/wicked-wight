@@ -60,18 +60,7 @@ class PassphraseCopyModal extends Component {
           <Row>
             <Col xs={12}>
               <p>
-                Click the icon to copy what's in the box to your clipboard. If
-                you want, you can edit the text yourself or automatically{' '}
-                <a
-                  onClick={() => {
-                    this.handleRemoveSpaces();
-                    console.log(this.refs.overlay.click);
-                  }}
-                  href="#remove-spaces"
-                >
-                  remove spaces
-                </a>
-                .
+                The passphrase below has been copied to your clipboard automatically. If you want, you can edit the text in the box; clicking the icon will copy your new text.
               </p>
             </Col>
             <Col xs={12} className="input-group">
@@ -109,7 +98,7 @@ class PassphraseCopyModal extends Component {
               <p>
                 Heedless of my efforts, some sites will not trust your password
                 without a capital letter and a number, so you can click{' '}
-                <a onClick={this.handleCapNum} href="#capital">
+                <a onClick={this.handleCapNum}>
                   here
                 </a>{' '}
                 to fulfill that requirement in the simplest possible way.

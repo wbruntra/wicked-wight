@@ -5,10 +5,10 @@
   "engines": {
     "node": ">=10"
   },
-  "scripts": {    
+  "scripts": {
     "front": "cd client && yarn start",
     "build": "npm run build --prefix client",
-    "deploy": "npm run build && gcloud app deploy -v production",
+    "deploy": "npm run build && gcloud app deploy -v prod",
     "start": "node ./bin/www",
     "server": "nodemon ./bin/www",
     "dev": "concurrently \"npm run server\" \"npm run start --prefix client\"",

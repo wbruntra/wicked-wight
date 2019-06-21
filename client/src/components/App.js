@@ -6,6 +6,15 @@ import SettingsModal from './modals/SettingsModal';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
+const copyToClipboard = str => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+};
+
 const templates = {
   got: {
     title: 'Game of Thrones',
@@ -23,7 +32,9 @@ const templates = {
 
 class App extends Component {
   handleClick = phrase => {
-    this.props.updateSelectedPhrase(phrase);
+    const noSpaces = phrase.replace(/\s/g, '');
+    copyToClipboard(noSpaces)
+    this.props.updateSelectedPhrase(noSpaces);
     this.props.showModal('box');
   };
 
