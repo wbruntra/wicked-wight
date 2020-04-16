@@ -1,0 +1,10 @@
+runtime: nodejs10
+
+handlers:
+- url: /app
+  static_dir: client/build
+- url: /api(/.*)?
+  script: auto
+- url: /.*
+  static_files: client/build/index.html
+  upload: client/build/index.html

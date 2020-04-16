@@ -1,0 +1,29 @@
+{
+  "name": "bc-fresume",
+  "version": "1.0.0",
+  "private": false,
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "front": "cd client && yarn start",
+    "build": "npm run build --prefix client",
+    "deploy": "npm run build && gcloud app deploy -v prod",
+    "start": "node ./bin/www",
+    "server": "nodemon ./bin/www",
+    "dev": "concurrently \"npm run server\" \"npm run start --prefix client\"",
+    "prod:test": "NODE_ENV=production npm run server"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~4.1.1",
+    "dotenv": "^7.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "morgan": "~1.9.1",
+    "nodemon": "^1.18.10",
+    "serve-favicon": "~2.5.0"
+  }
+}
