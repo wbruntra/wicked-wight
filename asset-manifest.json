@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.1b1f5fd2.chunk.css",
-    "main.js": "/static/js/main.d72a8b7a.chunk.js",
-    "main.js.map": "/static/js/main.d72a8b7a.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.81c5eedb.js",
-    "runtime-main.js.map": "/static/js/runtime-main.81c5eedb.js.map",
-    "static/js/2.4160fa12.chunk.js": "/static/js/2.4160fa12.chunk.js",
-    "static/js/2.4160fa12.chunk.js.map": "/static/js/2.4160fa12.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.1b1f5fd2.chunk.css.map": "/static/css/main.1b1f5fd2.chunk.css.map",
-    "static/js/2.4160fa12.chunk.js.LICENSE.txt": "/static/js/2.4160fa12.chunk.js.LICENSE.txt",
-    "static/media/clippy.89bd48cb.svg": "/static/media/clippy.89bd48cb.svg"
+    "main.css": "/wicked-wight/static/css/main.1b1f5fd2.chunk.css",
+    "main.js": "/wicked-wight/static/js/main.c614e3c6.chunk.js",
+    "main.js.map": "/wicked-wight/static/js/main.c614e3c6.chunk.js.map",
+    "runtime-main.js": "/wicked-wight/static/js/runtime-main.19c18905.js",
+    "runtime-main.js.map": "/wicked-wight/static/js/runtime-main.19c18905.js.map",
+    "static/js/2.245ee0bf.chunk.js": "/wicked-wight/static/js/2.245ee0bf.chunk.js",
+    "static/js/2.245ee0bf.chunk.js.map": "/wicked-wight/static/js/2.245ee0bf.chunk.js.map",
+    "index.html": "/wicked-wight/index.html",
+    "static/css/main.1b1f5fd2.chunk.css.map": "/wicked-wight/static/css/main.1b1f5fd2.chunk.css.map",
+    "static/js/2.245ee0bf.chunk.js.LICENSE.txt": "/wicked-wight/static/js/2.245ee0bf.chunk.js.LICENSE.txt",
+    "static/media/clippy.89bd48cb.svg": "/wicked-wight/static/media/clippy.89bd48cb.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.81c5eedb.js",
-    "static/js/2.4160fa12.chunk.js",
+    "static/js/runtime-main.19c18905.js",
+    "static/js/2.245ee0bf.chunk.js",
     "static/css/main.1b1f5fd2.chunk.css",
-    "static/js/main.d72a8b7a.chunk.js"
+    "static/js/main.c614e3c6.chunk.js"
   ]
 }
