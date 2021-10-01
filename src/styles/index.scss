@@ -1,0 +1,115 @@
+@import 'colors';
+@import 'fonts';
+@import 'bootstrap/scss/bootstrap';
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: $lightBlue;
+  font-family: $bodyFonts;
+  margin-bottom: 60px;
+  font-size: 1.1em;
+}
+
+.top-title {
+  text-align: center;
+  font-family: $titleFonts;
+  font-size: 2.4em;
+  font-weight: 700;
+}
+
+.section > p {
+  text-indent: 30px;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    max-width: 620px;
+  }
+}
+
+// .modal p {
+//   font-size: 1.1em;
+// }
+
+.section-title {
+  text-decoration: underline;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.container {
+  padding: 20px 8%;
+  background-color: $white;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2), 0 14px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media (min-width: 992px) {
+  .container {
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 970px;
+  }
+}
+
+.row {
+  margin-top: 20px;
+}
+
+.settings-box {
+  margin-bottom: 20px;
+}
+
+.card {
+  border-width: 0;
+}
+
+.passphrases,
+.pw-text {
+  font-family: $codeFonts;
+
+  .list-group-item {
+    text-align: center;
+    padding: 8px 15px;
+    border-radius: 0;
+  }
+}
+
+.input-group {
+  margin-bottom: 18px;
+
+  input {
+    height: 50px;
+  }
+}
+
+.pw-text {
+  background-color: $white;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .top-buffer {
+    margin-top: 20px;
+  }
+}
+
+.footer {
+  /* Set the fixed height of the footer here */
+  border-top: 1px solid $black;
+  height: 40px;
+}
+
+.code {
+  padding: 2px;
+  margin: 2px 0;
+  color: $deepRed;
+  font-family: $codeFonts;
+}
+
+.copy-trigger {
+  cursor: pointer;
+}
