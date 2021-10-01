@@ -13,6 +13,7 @@
     "http-proxy-middleware": "^2.0.1",
     "lodash": "^4.17.21",
     "lodash.range": "^3.2.0",
+    "postcss-custom-properties": "^12.0.0",
     "pretty-quick": "^3.1.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-rc.0",
@@ -35,6 +36,9 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages",
     "prepare": "husky install"
+  },
+  "resolutions": {
+    "react-scripts/postcss-preset-env/postcss-custom-properties": "^10.0.0"
   },
   "eslintConfig": {
     "extends": [
