@@ -1,9 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-import gotWords from '../data/got-long-words'
+import gotWords from 'data/got-long-words'
 
 const initialState = {
-  // selectedList: 'got',
-  // got: gotWords,
   wordList: {
     name: 'got',
     words: gotWords,
